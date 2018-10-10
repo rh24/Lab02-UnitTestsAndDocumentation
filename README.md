@@ -7,3 +7,8 @@ This project includes a main method and testable external methods. The tests for
 ## Sample Views
 
 ![console screenshot](https://i.imgur.com/WDqQ1dp.png)
+
+## How to use this app
+
+Open up visual studio and run by `Ctrl + f5`. Follow the prompts printed to your console.
+
