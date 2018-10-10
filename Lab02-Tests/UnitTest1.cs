@@ -13,6 +13,12 @@ namespace Lab02_Tests
             Assert.IsType<string>(ViewBalance());
         }
 
+        [Fact]
+        public static void BadBalance()
+        {
+            Assert.NotEmpty(ViewBalance());
+        }
+
         [Theory]
         // [InlineData(2000, CheckBalance(), 3000)]
         // How would I do something like that?

@@ -97,7 +97,7 @@ namespace Lab02_UnitTestsAndDocumentation
         {
             try
             {
-                object parsed = Convert.ToInt32(input);
+                object parsed = int.Parse(input);
             }
             catch (FormatException)
             {
