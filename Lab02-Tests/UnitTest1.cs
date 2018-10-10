@@ -1,4 +1,5 @@
 using Xunit;
+using System;
 using static Lab02_UnitTestsAndDocumentation.Program;
 
 namespace Lab02_Tests
@@ -18,6 +19,13 @@ namespace Lab02_Tests
         public static void CheckWithdrawal(int expected, string input)
         {
             Assert.Equal(expected, Withdraw(input));
+        }
+
+        [Theory]
+        [InlineData("this is a string, not a parsable number")]
+        public static void CheckFailedWithdrawal(string input)
+        {
+            Assert.Throws<FormatException>(Withdraw(input));
         }
     }
 }
