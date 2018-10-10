@@ -90,7 +90,7 @@ namespace Lab02_UnitTestsAndDocumentation
                 ViewBalance();
             }
 
-            return Program.balance -= int.Parse(input);
+            return $"Your balance is {Program.balance -= int.Parse(input)}";
         }
 
         public static dynamic Deposit(string input)
@@ -108,7 +108,7 @@ namespace Lab02_UnitTestsAndDocumentation
                 ViewBalance();
             }
 
-            return Program.balance += int.Parse(input);
+            return $"Your balance is {Program.balance += int.Parse(input)}";
         }
     }
 }
