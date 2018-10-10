@@ -9,7 +9,21 @@ namespace Lab02_UnitTestsAndDocumentation
         {
             Console.WriteLine("Welcome to the Console Bank! Choose an action by inputting the corresponding number.");
             Console.WriteLine("1. View Balance" + Environment.NewLine + "2. Withdraw" + Environment.NewLine + "3. Deposit" + Environment.NewLine + "4. Exit");
+            DelegateAction();
+        }
+
+        public static int balance = 5000;
+
+        public static void DelegateAction(string exception = "")
+        {
+            if (exception != "")
+            {
+                Console.WriteLine(exception);
+            }
+
+            Console.WriteLine("1. View Balance" + Environment.NewLine + "2. Withdraw" + Environment.NewLine + "3. Deposit" + Environment.NewLine + "4. Exit");
             string userInput = Console.ReadLine();
+
             switch (userInput)
             {
                 case "1":
@@ -25,8 +39,6 @@ namespace Lab02_UnitTestsAndDocumentation
             }
         }
 
-        public static int balance = 5000;
-
         public static int ViewBalance()
         {
             return Program.balance;
@@ -40,7 +52,7 @@ namespace Lab02_UnitTestsAndDocumentation
             }
             catch (FormatException e)
             {
-                DelegateAction
+                DelegateAction("Those are words. Enter a valid number.");
             }
 
             return Program.balance - input;
