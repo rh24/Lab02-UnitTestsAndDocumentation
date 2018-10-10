@@ -18,21 +18,18 @@ namespace Lab02_UnitTestsAndDocumentation
             Console.WriteLine("1. View Balance" + Environment.NewLine + "2. Withdraw" + Environment.NewLine + "3. Deposit" + Environment.NewLine + "4. Exit");
             string userInput = Console.ReadLine();
 
-            while (userInput != "exit")
+            DelegateAction(userInput);
+            while (DoSomethingElse() == "y")
             {
-                DelegateAction(userInput);
+                Console.WriteLine("1. View Balance" + Environment.NewLine + "2. Withdraw" + Environment.NewLine + "3. Deposit" + Environment.NewLine + "4. Exit");
+                DelegateAction(Console.ReadLine());
             }
         }
 
         public static int balance = 5000;
 
-        public static void DelegateAction(string userInput, string exception = "")
+        public static void DelegateAction(string userInput)
         {
-            if (exception != "")
-            {
-                Console.WriteLine(exception);
-            }
-
             switch (userInput)
             {
                 case "1":
@@ -41,16 +38,35 @@ namespace Lab02_UnitTestsAndDocumentation
                 case "2":
                     Console.WriteLine("How much would you like to withdraw?");
                     string input = Console.ReadLine();
-                    Withdraw(input);
+                    Console.WriteLine(Withdraw(input));
+                    break;
+                case "3":
+                    Console.WriteLine("How much would you like to deposit?");
+                    input = Console.ReadLine();
+                    Console.WriteLine(Deposit(input));
+                    break;
+                case "4":
+                    Console.WriteLine("Goodbye!");
+                    Environment.Exit(1);
                     break;
                 default:
+                    Console.WriteLine("Not a valid option!");
+                    DelegateAction(Console.ReadLine());
                     break;
             }
         }
 
-        public static int ViewBalance()
+        public static string DoSomethingElse()
         {
-            return Program.balance;
+            Console.WriteLine("Would you like to do something else? y/n");
+            string userInput = Console.ReadLine();
+
+            return userInput;
+        }
+
+        public static string ViewBalance()
+        {
+            return $"Your balance is {Program.balance.ToString()}";
         }
 
         public static dynamic Withdraw(string input)
@@ -74,7 +90,7 @@ namespace Lab02_UnitTestsAndDocumentation
                 ViewBalance();
             }
 
-            return Program.balance - int.Parse(input);
+            return Program.balance -= int.Parse(input);
         }
 
         public static dynamic Deposit(string input)
@@ -92,7 +108,7 @@ namespace Lab02_UnitTestsAndDocumentation
                 ViewBalance();
             }
 
-            return Program.balance + int.Parse(input);
+            return Program.balance += int.Parse(input);
         }
     }
 }
