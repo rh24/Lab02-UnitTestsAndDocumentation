@@ -14,8 +14,8 @@ namespace Lab02_Tests
         [Theory]
         // [InlineData(2000, CheckBalance(), 3000)]
         // How would I do something like that?
-        [InlineData(2000, 3000)]
-        public static void CheckWithdrawal(int expected, int input)
+        [InlineData(2000, "3000")]
+        public static void CheckWithdrawal(int expected, string input)
         {
             Assert.Equal(expected, Withdraw(input));
         }

@@ -50,12 +50,12 @@ namespace Lab02_UnitTestsAndDocumentation
             {
                 int parsed = int.Parse(input);
             }
-            catch (FormatException e)
+            catch (FormatException)
             {
                 DelegateAction("Those are words. Enter a valid number.");
             }
 
-            return Program.balance - input;
+            return Program.balance - int.Parse(input);
         }
     }
 }
