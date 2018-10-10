@@ -24,9 +24,9 @@ namespace Lab02_UnitTestsAndDocumentation
             }
         }
 
-        public static int Balance()
+        public static int ViewBalance()
         {
-            return 5000;
+            return Program.balance;
         }
 
     }

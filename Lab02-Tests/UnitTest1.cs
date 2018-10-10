@@ -8,7 +8,7 @@ namespace Lab02_Tests
         [Fact]
         public static void CheckBalance()
         {
-            Assert.IsType<int>(Balance());
+            Assert.IsType<int>(ViewBalance());
         }
 
         [Theory]
