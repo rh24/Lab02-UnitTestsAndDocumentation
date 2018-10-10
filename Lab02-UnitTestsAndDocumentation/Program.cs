@@ -10,30 +10,40 @@ namespace Lab02_UnitTestsAndDocumentation
             Console.WriteLine("Welcome to the Console Bank! Choose an action by inputting the corresponding number.");
             Console.WriteLine("1. View Balance" + Environment.NewLine + "2. Withdraw" + Environment.NewLine + "3. Deposit" + Environment.NewLine + "4. Exit");
             string userInput = Console.ReadLine();
-            DelegateAction(userInput);
-        }
-
-        public static int balance = 5000;
-
-        public static void DelegateAction(string userInput)
-        {
-            switch (input)
+            switch (userInput)
             {
                 case "1":
                     ViewBalance();
                     break;
                 case "2":
-                    Withdraw();
+                    Console.WriteLine("How much would you like to withdraw?");
+                    string input = Console.ReadLine();
+                    Withdraw(input);
                     break;
                 default:
                     break;
             }
         }
 
+        public static int balance = 5000;
+
         public static int ViewBalance()
         {
             return Program.balance;
         }
 
+        public static int Withdraw(string input)
+        {
+            try
+            {
+                int input = int.Parse(input);
+            }
+            catch (FormatException e)
+            {
+                DelegateAction
+            }
+
+            return Program.balance - input;
+        }
     }
 }
