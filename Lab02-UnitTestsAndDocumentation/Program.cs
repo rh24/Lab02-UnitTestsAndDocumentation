@@ -17,10 +17,16 @@ namespace Lab02_UnitTestsAndDocumentation
 
         public static void DelegateAction(string userInput)
         {
-            switch (method)
+            switch (input)
             {
-                case 1:
-
+                case "1":
+                    ViewBalance();
+                    break;
+                case "2":
+                    Withdraw();
+                    break;
+                default:
+                    break;
             }
         }
 
