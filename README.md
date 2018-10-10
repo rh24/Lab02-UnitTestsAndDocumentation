@@ -5,3 +5,5 @@ This is a mock ATM console application that allows users to withdraw and deposit
 This project includes a main method and testable external methods. The tests for this application live in the Lab02-Tests directory. In the Program, exceptions will be handled with try, catch, finally, and a throw.
 
 ## Sample Views
+
+![console screenshot](https://i.imgur.com/WDqQ1dp.png)
