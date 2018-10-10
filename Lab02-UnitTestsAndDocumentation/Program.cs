@@ -48,7 +48,7 @@ namespace Lab02_UnitTestsAndDocumentation
         {
             try
             {
-                int input = int.Parse(input);
+                int parsed = int.Parse(input);
             }
             catch (FormatException e)
             {
