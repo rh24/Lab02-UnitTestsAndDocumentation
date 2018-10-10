@@ -36,7 +36,8 @@ namespace Lab02_Tests
         public static void CheckFailedWithdrawal(string input)
         {
             Action badWithdrawal = () => Withdraw(input);
-            Assert.Throws<FormatException>(badWithdrawal);
+            Exception e = Record.Exception(badWithdrawal);
+            Assert.IsType<FormatException>(e);
         }
 
         [Theory]
@@ -59,7 +60,9 @@ namespace Lab02_Tests
         [InlineData("Hello")]
         public static void BadDeposit(string input)
         {
-            Assert.Throws<FormatException>(() => Deposit(input));
+            Action badDeposit = () => Deposit(input);
+            Exception e = Record.Exception(badDeposit);
+            Assert.IsType<FormatException>(e);
         }
     }
 }
