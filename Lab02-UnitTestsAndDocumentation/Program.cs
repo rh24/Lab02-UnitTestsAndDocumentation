@@ -9,5 +9,10 @@ namespace Lab02_UnitTestsAndDocumentation
         {
             Console.WriteLine("Welcome to the Console Bank! Choose an action by inputting the corresponding number.");
         }
+
+        public static int Balance()
+        {
+            return 5000;
+        }
     }
 }
