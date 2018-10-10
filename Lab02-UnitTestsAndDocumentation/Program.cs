@@ -77,9 +77,9 @@ namespace Lab02_UnitTestsAndDocumentation
                 if (parsed.GetType() != typeof(int)) throw new FormatException("Those are words. Enter a number.");
                 if (Program.balance - (int)parsed < 0) throw new CustomException("You don't have enough money for that.");
             }
-            catch (FormatException )
+            catch (FormatException e)
             {
-                throw;
+                throw e;
             }
             catch (CustomException ex)
             {
@@ -99,9 +99,9 @@ namespace Lab02_UnitTestsAndDocumentation
             {
                 object parsed = int.Parse(input);
             }
-            catch (FormatException)
+            catch (FormatException e)
             {
-                throw;
+                throw e;
             }
             finally
             {
