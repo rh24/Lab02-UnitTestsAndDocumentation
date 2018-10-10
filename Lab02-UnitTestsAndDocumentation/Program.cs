@@ -77,9 +77,9 @@ namespace Lab02_UnitTestsAndDocumentation
                 if (parsed.GetType() != typeof(int)) throw new FormatException("Those are words. Enter a number.");
                 if (Program.balance - (int)parsed < 0) throw new CustomException("You don't have enough money for that.");
             }
-            catch (FormatException ex)
+            catch (FormatException )
             {
-                return ex.Message;
+                throw;
             }
             catch (CustomException ex)
             {
@@ -90,7 +90,7 @@ namespace Lab02_UnitTestsAndDocumentation
                 ViewBalance();
             }
 
-            return $"Your balance is {Program.balance -= int.Parse(input)}";
+            return Program.balance -= int.Parse(input);
         }
 
         public static dynamic Deposit(string input)
@@ -99,16 +99,16 @@ namespace Lab02_UnitTestsAndDocumentation
             {
                 object parsed = Convert.ToInt32(input);
             }
-            catch (Exception ex)
+            catch (FormatException)
             {
-                return ex.Message;
+                throw;
             }
             finally
             {
                 ViewBalance();
             }
 
-            return $"Your balance is {Program.balance += int.Parse(input)}";
+            return Program.balance += int.Parse(input);
         }
     }
 }
