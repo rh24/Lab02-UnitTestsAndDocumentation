@@ -8,6 +8,7 @@ namespace Lab02_UnitTestsAndDocumentation
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the Console Bank! Choose an action by inputting the corresponding number.");
+            Console.WriteLine("1. View Balance" + Environment.NewLine + "2. Withdraw" + Environment.NewLine + "3. Deposit" + Environment.NewLine + "4. Exit");
         }
 
         public static int Balance()
