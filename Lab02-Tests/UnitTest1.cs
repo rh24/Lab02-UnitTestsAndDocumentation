@@ -1,5 +1,5 @@
-using System;
 using Xunit;
+using static Lab02_UnitTestsAndDocumentation.Program;
 
 namespace Lab02_Tests
 {
