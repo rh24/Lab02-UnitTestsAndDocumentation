@@ -58,11 +58,12 @@ namespace Lab02_UnitTestsAndDocumentation
             try
             {
                 int parsed = int.Parse(input);
+                if (parsed.GetType() != typeof(int)) throw new FormatException("Those are words. Enter a number.");
                 if (Program.balance - parsed < 0) throw new CustomException("You don't have enough money for that.");
             }
-            catch (FormatException)
+            catch (FormatException ex)
             {
-                //throw new CustomException("Those are words.Enter a valid number.");
+                return ex.Message;
             }
             catch (CustomException ex)
             {
@@ -74,6 +75,11 @@ namespace Lab02_UnitTestsAndDocumentation
             }
 
             return Program.balance - int.Parse(input);
+        }
+
+        public static int Deposit(string input)
+        {
+            return Program.balance + int.Parse(input);
         }
     }
 }

@@ -1,7 +1,7 @@
 using Xunit;
 using System;
 using static Lab02_UnitTestsAndDocumentation.Program;
-using static Lab02_UnitTestsAndDocumentation.CustomException;
+using Lab02_UnitTestsAndDocumentation;
 
 namespace Lab02_Tests
 {
@@ -40,6 +40,13 @@ namespace Lab02_Tests
             var message = "You don't have enough money for that.";
 
             Assert.Equal(message, Withdraw(input));
+        }
+
+        [Theory]
+        [InlineData("1000")]
+        public static void CheckDeposit(string input)
+        {
+            Assert.Equal(6000, Deposit(input));
         }
     }
 }
