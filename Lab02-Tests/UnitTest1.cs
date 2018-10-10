@@ -11,13 +11,13 @@ namespace Lab02_Tests
             Assert.IsType<int>(Balance());
         }
 
-        //[Theory]
-        //// [InlineData(2000, CheckBalance(), 3000)]
-        //// How would I do something like that?
-        //[InlineData(2000, 5000, 3000)]
-        //public static int CheckWithdrawal(int expected, int balance, int input)
-        //{
-        //    Assert.Equal(expected, Withdraw(input));
-        //}
+        [Theory]
+        // [InlineData(2000, CheckBalance(), 3000)]
+        // How would I do something like that?
+        [InlineData(2000, 5000, 3000)]
+        public static int CheckWithdrawal(int expected, int balance, int input)
+        {
+            Assert.Equal(expected, Withdraw(input));
+        }
     }
 }

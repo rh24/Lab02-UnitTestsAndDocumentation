@@ -13,14 +13,21 @@ namespace Lab02_UnitTestsAndDocumentation
             DelegateAction(userInput);
         }
 
+        public static int balance = 5000;
+
         public static void DelegateAction(string userInput)
         {
+            switch (method)
+            {
+                case 1:
 
+            }
         }
 
         public static int Balance()
         {
             return 5000;
         }
+
     }
 }
