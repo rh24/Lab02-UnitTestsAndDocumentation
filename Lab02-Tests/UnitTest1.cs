@@ -48,5 +48,12 @@ namespace Lab02_Tests
         {
             Assert.Equal(6000, Deposit(input));
         }
+
+        [Theory]
+        [InlineData("Hello")]
+        public static void BadDeposit(string input)
+        {
+            Assert.Throws<FormatException>(() => Deposit(input));
+        }
     }
 }

@@ -57,9 +57,9 @@ namespace Lab02_UnitTestsAndDocumentation
         {
             try
             {
-                int parsed = int.Parse(input);
+                object parsed = int.Parse(input);
                 if (parsed.GetType() != typeof(int)) throw new FormatException("Those are words. Enter a number.");
-                if (Program.balance - parsed < 0) throw new CustomException("You don't have enough money for that.");
+                if (Program.balance - (int)parsed < 0) throw new CustomException("You don't have enough money for that.");
             }
             catch (FormatException ex)
             {
@@ -77,8 +77,21 @@ namespace Lab02_UnitTestsAndDocumentation
             return Program.balance - int.Parse(input);
         }
 
-        public static int Deposit(string input)
+        public static dynamic Deposit(string input)
         {
+            try
+            {
+                object parsed = Convert.ToInt32(input);
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            finally
+            {
+                ViewBalance();
+            }
+
             return Program.balance + int.Parse(input);
         }
     }
